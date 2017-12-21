@@ -30,7 +30,7 @@ var accountant = {
 	"fCountPoints" : function(data){
 		
 	var questionHandler = require('./questionHandler.js');
-	var questions = questionHandler.fGetQuestions();
+	questions = questionHandler.fGetQuestions();
 	
 	var jediPoints = 0;
 	var sithPoints = 0;	
