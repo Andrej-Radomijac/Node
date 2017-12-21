@@ -18,7 +18,14 @@ router.post('/resultsFromFile',jsonParser,function(req,res,next){
 
 });
 
-router.get('/result',function(req,res,next){
+router.post('/postAnswers',jsonParser,function(req,res,next){
+	
+	points = accountant.fCountPoints(req.body);
+	res.end('Successfull');
+	
+});
+
+router.get('/getPoints',function(req,res,next){
 	
 	res.end('JediPoints :['+points.jediPoints+"]["+points.sithPoints+"]: SithPoints");
 	
