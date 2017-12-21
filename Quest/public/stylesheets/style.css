@@ -1,0 +1,73 @@
+html{
+	
+	background-image: url("/pictures/galaxy.jpg");
+	font-family: Comic Sans MS;
+	font-size: 24px;
+	color: yellow;
+}
+
+body{
+	
+	padding: 50px;
+	text-align: center;
+}
+
+div#content{
+	
+	background: black;
+	border: 2px;
+	border-color:yellow;
+	border-style: dotted;
+	border-radius:30px;
+	padding: 30px;
+}
+
+header,footer{
+	
+	text-align: center;
+	font-size: 42px;
+	background: black;
+	padding: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 2px;
+	border-style: dotted;
+	border-radius: 30px;
+}
+
+ul{
+	
+	padding:0px;
+	
+}
+
+li.question{
+	
+	text-decoration: underline;
+	font-size: 30px;
+
+}
+
+hr{
+
+	border-color: yellow;
+	
+}
+
+input#submitButt{
+	
+	size: 40px;
+	background: blue;
+	color: white;
+	font-size: 28px;
+	border-color: black;
+	border-radius: 30px;
+	
+}
+
+input#submitButt:hover{
+	
+	background:green;
+	color: black;
+	
+}
