@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var questions = require('./routes/questions');
+var index = require('./routes/index.js');
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "/views"));
@@ -22,6 +23,7 @@ app.use(session({
 }));
 
 app.use('/questions',questions);
+app.use('/',index);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
