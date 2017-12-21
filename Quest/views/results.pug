@@ -1,0 +1,12 @@
+extends page
+block content
+ h1 Jedi Points : [#{jPoints}] [#{sPoints}] : Sith Points
+ if(jPoints == sPoints)
+  p Who am I !?
+  p You have a personality disorder, just like Anakin/Vader  when he tries to kill Luke.
+ else if(jPoints < sPoints)
+  p Sith Happens!
+  p Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering. Remember this as you become the apprentice of the dark side.
+ else
+  p The last Jedi!
+  p You are the Chosen One. You have brought balance to this world. Stay on this path, and you will do it again for the galaxy. But beware your heart.

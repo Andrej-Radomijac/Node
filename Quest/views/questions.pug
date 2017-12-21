@@ -1,0 +1,14 @@
+extends page
+block content
+ form(method='POST' action='/')
+  if !{content}.length
+  each val in content
+   ul(style='list-style-type:none')
+    li(class='question')= val.question
+    each valu in val.anwsers
+     ul(style='list-style-type:none')
+      li= valu.text
+       input(type='radio' name=val.input_name value=valu.value)
+      br
+   hr
+  input(type='submit' id='submitButt' value='Submit')
