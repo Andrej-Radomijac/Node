@@ -1,0 +1,19 @@
+{
+  "name": "quest",
+  "version": "1.0.0",
+  "description": "Small application for experimentation with node.js/express.js/pug",
+  "main": "QuestApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krijesnica96/QuestSW.git"
+  },
+  "author": "Roko Čupić",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krijesnica96/QuestSW/issues"
+  },
+  "homepage": "https://github.com/krijesnica96/QuestSW#readme"
+}
