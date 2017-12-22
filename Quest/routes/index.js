@@ -9,8 +9,6 @@ var accountant = require('../service/accountant');
 var rawData = fs.readFileSync('./Backend.js');
 var parsedData = JSON.parse(rawData);
 
-var points;
-
 router.get('/',function(req,res,next){
 
 	res.render('questions',{content:parsedData});
@@ -19,7 +17,7 @@ router.get('/',function(req,res,next){
 
 router.post('/',urlencodedParser,function(req,res,next){
 	
-	points = accountant.fCountPointsHardCode(parsedData,req.body);
+	let points = accountant.fCountPointsHardCode(parsedData,req.body);
 	res.render('results',{jPoints : points.jediPoints, sPoints : points.sithPoints});
 	
 });
