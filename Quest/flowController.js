@@ -1,4 +1,4 @@
-var accountant = require('./accountant.js');
+var accountant = require('./service/accountant.js');
 var questionHandler = require('./questionHandler.js');
 
 var flowController = {
