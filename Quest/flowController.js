@@ -45,6 +45,11 @@ var flowController = {
 		
 		var flag = questionHandler.fDropQuestion(data);
 		
+		if(flag == 11){
+		
+			console.log('Nothing is deleted because list is empty!');
+			
+		}
 	},
 
 };
