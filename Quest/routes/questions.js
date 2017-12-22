@@ -1,16 +1,16 @@
-var express = require('express');
-var router = express.Router();
-var fs = require('fs');
-var bodyParser = require('body-parser');
-var jsonParser = bodyParser.json();
-var accountant = require('../service/accountant');
-var flowController = require('../controller/flowController.js');
+const express = require('express');
+const router = express.Router();
+const fs = require('fs');
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
+const accountant = require('../service/accountant');
+const flowController = require('../controller/flowController.js');
 var points;
 
 router.post('/resultsFromFile',jsonParser,function(req,res,next){
 	
-	let rawData = fs.readFileSync('./Backend.js');
-	let parsedData = JSON.parse(rawData);
+	const rawData = fs.readFileSync('./Backend.js');
+	const parsedData = JSON.parse(rawData);
 	
 	points = accountant.fCountPointsHardCode(parsedData,req.body);
 	
@@ -27,7 +27,7 @@ router.post('/postAnswers',jsonParser,function(req,res,next){
 
 router.post('/findQuestion',jsonParser,function(req,res,next){
 	
-	let question = flowController.findQuestion(req.body);
+	const question = flowController.findQuestion(req.body);
 	res.end("Question : "+question.question);
 	
 });
@@ -40,7 +40,7 @@ router.get('/getPoints',function(req,res,next){
 
 router.get('/getQuestions',function(req,res,next){
 	
-	let questions = flowController.getQuestions();;
+	const questions = flowController.getQuestions();;
 	let names = [];
 	let i = 0;
 	
