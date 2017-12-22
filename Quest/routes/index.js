@@ -5,7 +5,6 @@ var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var accountant = require('../service/accountant');
-var questionHandler = require('../questionHandler.js');
 var rawData = fs.readFileSync('./Backend.js');
 var parsedData = JSON.parse(rawData);
 var points;
