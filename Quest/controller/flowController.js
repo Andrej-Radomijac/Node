@@ -5,7 +5,7 @@ var flowController = {
 	
 	"getQuestions" : function(){
 		
-		var flag = questionHandler.fGetQuestions();
+		let flag = questionHandler.fGetQuestions();
 		
 		if(flag == 11){
 			
@@ -21,7 +21,7 @@ var flowController = {
 	
 	"findQuestion" : function(data){
 		
-		var flag = questionHandler.fFindQuestion(data);
+		let flag = questionHandler.fFindQuestion(data);
 		
 		return flag;
 		
@@ -29,13 +29,13 @@ var flowController = {
 	
 	"postQuestions" : function(data){
 		
-		var flag = questionHandler.fPostQuestions(data);
+		let flag = questionHandler.fPostQuestions(data);
 		
 	},
 	
 	"addQuestion" : function(data){
 		
-		var flag = questionHandler.fAddQuestion(data);
+		let flag = questionHandler.fAddQuestion(data);
 		
 		
 	},
@@ -43,7 +43,7 @@ var flowController = {
 	"dropQuestion" : function(data){
 		
 		
-		var flag = questionHandler.fDropQuestion(data);
+		let flag = questionHandler.fDropQuestion(data);
 		
 		if(flag == 11){
 			
