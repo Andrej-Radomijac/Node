@@ -1,7 +1,7 @@
 var questions = [];
 var id = 0;
 
-var questionHandler = {
+const questionHandler = {
 
 	"fPostQuestions" : function(data){
 		
