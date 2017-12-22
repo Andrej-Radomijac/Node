@@ -9,8 +9,8 @@ var points;
 
 router.post('/resultsFromFile',jsonParser,function(req,res,next){
 	
-	var rawData = fs.readFileSync('./Backend.js');
-	var parsedData = JSON.parse(rawData);
+	let rawData = fs.readFileSync('./Backend.js');
+	let parsedData = JSON.parse(rawData);
 	
 	points = accountant.fCountPointsHardCode(parsedData,req.body);
 	
@@ -27,7 +27,7 @@ router.post('/postAnswers',jsonParser,function(req,res,next){
 
 router.post('/findQuestion',jsonParser,function(req,res,next){
 	
-	var question = flowController.findQuestion(req.body);
+	let question = flowController.findQuestion(req.body);
 	res.end("Question : "+question.question);
 	
 });
@@ -40,9 +40,9 @@ router.get('/getPoints',function(req,res,next){
 
 router.get('/getQuestions',function(req,res,next){
 	
-	var questions = flowController.getQuestions();;
-	var names = [];
-	var i = 0;
+	let questions = flowController.getQuestions();;
+	let names = [];
+	let i = 0;
 	
 	while(i<questions.length){
 		
