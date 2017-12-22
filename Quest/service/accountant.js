@@ -1,6 +1,6 @@
-var flowController = require('../controller/flowController.js');
+const flowController = require('../controller/flowController.js');
 
-var accountant = {
+const accountant = {
 	
 	"fCountPointsHardCode" : function(questions,request){
 		
@@ -28,7 +28,7 @@ var accountant = {
 	
 	"fCountPoints" : function(data){
 		
-	let questions = flowController.getQuestions();
+	const questions = flowController.getQuestions();
 	
 	let jediPoints = 0;
 	let sithPoints = 0;	
