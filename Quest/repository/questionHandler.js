@@ -64,7 +64,7 @@ var questionHandler = {
 			
 		}else{
 			
-			var i = 0;
+			let i = 0;
 			while(i<questions.length){
 				if(data.question == questions[i].question){
 					
