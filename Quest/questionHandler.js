@@ -57,7 +57,7 @@ var questionHandler = {
 	"fDropQuestion" : function(data){
 		
 		
-		if(!questions.length){
+		if(questions.length == 0){
 			
 			return 11;
 			
