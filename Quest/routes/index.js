@@ -5,8 +5,10 @@ var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var accountant = require('../service/accountant');
+
 var rawData = fs.readFileSync('./Backend.js');
 var parsedData = JSON.parse(rawData);
+
 var points;
 
 router.get('/',function(req,res,next){
