@@ -1,5 +1,5 @@
-var accountant = require('./service/accountant.js');
-var questionHandler = require('./questionHandler.js');
+var accountant = require('../service/accountant.js');
+var questionHandler = require('../repository/questionHandler.js');
 
 var flowController = {
 	
