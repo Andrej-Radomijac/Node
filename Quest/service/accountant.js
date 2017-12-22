@@ -1,5 +1,4 @@
-var questionHandler = require('../questionHandler.js');
-var questions = questionHandler.fGetQuestions();
+var flowController = require('../controller/flowController.js');
 
 var accountant = {
 	
@@ -29,8 +28,7 @@ var accountant = {
 	
 	"fCountPoints" : function(data){
 		
-	var questionHandler = require('./questionHandler.js');
-	questions = questionHandler.fGetQuestions();
+	var questions = flowController.getQuestions();
 	
 	var jediPoints = 0;
 	var sithPoints = 0;	
