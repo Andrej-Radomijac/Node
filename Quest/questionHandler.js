@@ -1,10 +1,19 @@
 var questions = [];
+var id = 0;
 
 var questionHandler = {
 
 	"fPostQuestions" : function(data){
 		
 		questions = data;
+		
+		var i = 0;
+		while(i<questions.length){
+			
+			questions[i++].id = id++;
+			
+		}
+		
 		
 	},
 	
@@ -24,6 +33,7 @@ var questionHandler = {
 	},
 	"fAddQuestion" : function(data){
 		
+		data.id = id++;
 		questions.push(data);
 		
 	},
