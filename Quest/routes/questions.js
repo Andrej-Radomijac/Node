@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
-var accountant = require('../accountant');
+var accountant = require('../service/accountant');
 var questionHandler = require('../questionHandler.js');
 var flowController = require('../flowController.js');
 var points;
