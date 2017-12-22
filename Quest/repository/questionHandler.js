@@ -7,7 +7,7 @@ var questionHandler = {
 		
 		questions = data;
 		
-		var i = 0;
+		let i = 0;
 		while(i<questions.length){
 			
 			questions[i++].id = id++;
@@ -19,7 +19,7 @@ var questionHandler = {
 	
 	"fFindQuestion" : function(data){
 		
-		var i = 0;
+		let i = 0;
 		while(i<questions.length){
 			
 			if(data.id == questions[i].id){
