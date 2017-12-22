@@ -1,11 +1,11 @@
-var accountant = require('../service/accountant.js');
-var questionHandler = require('../repository/questionHandler.js');
+const accountant = require('../service/accountant.js');
+const questionHandler = require('../repository/questionHandler.js');
 
-var flowController = {
+const flowController = {
 	
 	"getQuestions" : function(){
 		
-		let flag = questionHandler.fGetQuestions();
+		const flag = questionHandler.fGetQuestions();
 		
 		if(flag == 11){
 			
@@ -21,7 +21,7 @@ var flowController = {
 	
 	"findQuestion" : function(data){
 		
-		let flag = questionHandler.fFindQuestion(data);
+		const flag = questionHandler.fFindQuestion(data);
 		
 		return flag;
 		
@@ -29,13 +29,13 @@ var flowController = {
 	
 	"postQuestions" : function(data){
 		
-		let flag = questionHandler.fPostQuestions(data);
+		const flag = questionHandler.fPostQuestions(data);
 		
 	},
 	
 	"addQuestion" : function(data){
 		
-		let flag = questionHandler.fAddQuestion(data);
+		const flag = questionHandler.fAddQuestion(data);
 		
 		
 	},
@@ -43,7 +43,7 @@ var flowController = {
 	"dropQuestion" : function(data){
 		
 		
-		let flag = questionHandler.fDropQuestion(data);
+		const flag = questionHandler.fDropQuestion(data);
 		
 		if(flag == 11){
 			
