@@ -73,7 +73,6 @@ router.post('/addQuestion',jsonParser,function(req,res,next){
 router.post('/dropQuestion',jsonParser,function(req,res,next){
 	
 	questionHandler.dropQuestion(req.body);
-	console.log(questionHandler.fGetQuestions);
 	res.end('Succesfull');
 	
 });
