@@ -14,43 +14,35 @@ router.post('/resultsFromFile',jsonParser,function(req,res,next){
 	
 	points = accountant.fCountPointsHardCode(parsedData,req.body);
 	
-	res.end('Successfull');
+	res.status(200).json(points);
 
 });
 
 router.post('/postAnswers',jsonParser,function(req,res,next){
 	
 	points = accountant.fCountPoints(req.body);
-	res.end('Successfull');
+	res.status(200).json(points);
 	
 });
 
 router.post('/findQuestion',jsonParser,function(req,res,next){
 	
 	const question = flowController.findQuestion(req.body);
-	res.end("Question : "+question.question);
+	res.status(200).json(question);
 	
 });
 
 router.get('/getPoints',function(req,res,next){
 	
-	res.end('JediPoints :['+points.jediPoints+"]["+points.sithPoints+"]: SithPoints");
+	res.status(200).json(points);
 	
 });
 
 router.get('/getQuestions',function(req,res,next){
 	
 	const questions = flowController.getQuestions();;
-	let names = [];
-	let i = 0;
-	
-	while(i<questions.length){
-		
-		names[i] = questions[i].question;
-		i++;
-	}
-	
-	res.end("Questions list: " + names);
+
+	res.status(200).json(questions);
 	
 });
 
@@ -58,21 +50,29 @@ router.post('/postQuestions',jsonParser,function(req,res,next){
 	
 	flowController.postQuestions(req.body);
 	
-	res.end('Succesfull');
+	res.status(200).json(questions);
 	
 });
 
 router.post('/addQuestion',jsonParser,function(req,res,next){
 	
 	flowController.addQuestion(req.body);
-	res.end('Succesfull');
+	res.status(200).json(result);
 	
 });
 
 router.post('/dropQuestion',jsonParser,function(req,res,next){
 	
 	flowController.dropQuestion(req.body);
-	res.end('Succesfull');
+	
+	if(result == 11){
+		
+		res.status(500).json({"title" : "Error while dropping question","message" : "Question list is empty or something else occuried"});
+		
+	}else{
+		
+		res.status(500).json({"title" : "Error while dropping question","message" : "Question list is empty or something else occuried"});
+	}
 	
 });
 
