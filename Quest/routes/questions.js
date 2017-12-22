@@ -4,7 +4,6 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var accountant = require('../service/accountant');
-var questionHandler = require('../repository/questionHandler.js');
 var flowController = require('../controller/flowController.js');
 var points;
 
@@ -57,7 +56,7 @@ router.get('/getQuestions',function(req,res,next){
 
 router.post('/postQuestions',jsonParser,function(req,res,next){
 	
-	questionHandler.postQuestions(req.body);
+	flowController.postQuestions(req.body);
 	
 	res.end('Succesfull');
 	
@@ -65,14 +64,14 @@ router.post('/postQuestions',jsonParser,function(req,res,next){
 
 router.post('/addQuestion',jsonParser,function(req,res,next){
 	
-	questionHandler.addQuestion(req.body);
+	flowController.addQuestion(req.body);
 	res.end('Succesfull');
 	
 });
 
 router.post('/dropQuestion',jsonParser,function(req,res,next){
 	
-	questionHandler.dropQuestion(req.body);
+	flowController.dropQuestion(req.body);
 	res.end('Succesfull');
 	
 });
