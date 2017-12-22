@@ -48,8 +48,10 @@ const flowController = {
 		if(flag == 11){
 			
 			console.log('Nothing is deleted because list is empty!');
-			
+			return flag;
 		}
+		
+		return flag;
 		
 	},
 
