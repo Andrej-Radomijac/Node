@@ -1,4 +1,4 @@
-var questionHandler = require('./questionHandler.js');
+var questionHandler = require('../questionHandler.js');
 var questions = questionHandler.fGetQuestions();
 
 var accountant = {
