@@ -25,6 +25,14 @@ var flowController = {
 		
 	},
 	
+	"findQuestion" : function(data){
+		
+		var flag = questionHandler.fFindQuestion(data);
+		
+		return flag;
+		
+	},
+	
 	"addQuestion" : function(data){
 		
 		var flag = questionHandler.fAddQuestion(data);
