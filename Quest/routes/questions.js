@@ -4,8 +4,8 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var accountant = require('../service/accountant');
-var questionHandler = require('../questionHandler.js');
-var flowController = require('../flowController.js');
+var questionHandler = require('../repository/questionHandler.js');
+var flowController = require('../controller/flowController.js');
 var points;
 
 router.post('/resultsFromFile',jsonParser,function(req,res,next){
