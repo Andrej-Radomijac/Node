@@ -28,6 +28,22 @@ var questionHandler = {
 		
 	},
 	
+	"fFindQuestion" : function(data){
+		
+		var i = 0;
+		while(i<questions.length){
+			
+			if(data.id == questions[i].id){
+				
+				return questions[i]
+				
+			}
+			i++
+		}
+		return 11;
+		
+	},
+	
 	"fDropQuestion" : function(data){
 		
 		
