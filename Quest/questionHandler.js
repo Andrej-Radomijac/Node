@@ -20,7 +20,7 @@ var questionHandler = {
 	"fGetQuestions" : function() {
 		
 		var i = 0;
-		if(questions.length){
+		if(questions.length!=0){
 			
 			return questions;
 			
