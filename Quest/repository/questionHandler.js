@@ -69,12 +69,14 @@ const questionHandler = {
 				if(data.question == questions[i].question){
 					
 					questions.splice(i,1);
-					return 0;
+					return questions;
 				}
 				
 				i++;
 			}
 			
+			return 11;
+		
 		}
 		
 	},
