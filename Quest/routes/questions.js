@@ -26,6 +26,13 @@ router.post('/postAnswers',jsonParser,function(req,res,next){
 	
 });
 
+router.post('/findQuestion',jsonParser,function(req,res,next){
+	
+	var question = flowController.findQuestion(req.body);
+	res.end("Question : "+question.question);
+	
+});
+
 router.get('/getPoints',function(req,res,next){
 	
 	res.end('JediPoints :['+points.jediPoints+"]["+points.sithPoints+"]: SithPoints");
