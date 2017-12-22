@@ -4,8 +4,8 @@ var accountant = {
 	
 	"fCountPointsHardCode" : function(questions,request){
 		
-	var jediPoints = 0;
-	var sithPoints = 0;
+	let jediPoints = 0;
+	let sithPoints = 0;
 	
 	jediPoints += questions[0].anwsers[request.fav_mov].jediPoints;
 	sithPoints += questions[0].anwsers[request.fav_mov].sithPoints;
@@ -28,10 +28,10 @@ var accountant = {
 	
 	"fCountPoints" : function(data){
 		
-	var questions = flowController.getQuestions();
+	let questions = flowController.getQuestions();
 	
-	var jediPoints = 0;
-	var sithPoints = 0;	
+	let jediPoints = 0;
+	let sithPoints = 0;	
 		
 	jediPoints += questions[0].anwsers[data.fav_mov].jediPoints;
 	sithPoints += questions[0].anwsers[data.fav_mov].sithPoints;
