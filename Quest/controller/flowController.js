@@ -36,7 +36,13 @@ const flowController = {
 	"addQuestion" : function(data){
 		
 		const flag = questionHandler.fAddQuestion(data);
-		
+		if (flag.question == data.question){
+			return flag;
+		}else{
+			return 11;
+		}
+	},
+
 		
 	},
 
