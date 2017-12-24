@@ -7,15 +7,7 @@ const flowController = {
 		
 		const flag = questionHandler.fGetQuestions();
 		
-		if(flag == 11){
-			
-			return "ERROR /GET QUESTIONS";
-			
-		}else{
-			console.log(flag);
-			return flag;
-			
-		}
+		return flag;
 		
 	},
 	
