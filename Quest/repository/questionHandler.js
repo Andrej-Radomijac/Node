@@ -52,7 +52,7 @@ const questionHandler = {
 		data.id = id++;
 		questions.push(data);
 		
-		
+		return questions[questions.length-1];
 	},
 	
 	"fDropQuestion" : function(data){
