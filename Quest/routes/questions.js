@@ -42,7 +42,13 @@ router.get('/getQuestions',function(req,res,next){
 	
 	const questions = flowController.getQuestions();;
 
-	res.status(200).json(questions);
+	if(flag!=11){
+		
+		res.status(200).json(questions);
+	
+	}else{
+		res.status(500).json({"error" : "Failed to get questions"});
+	}
 	
 });
 
