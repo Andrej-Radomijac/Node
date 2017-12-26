@@ -1,5 +1,5 @@
 var questions = [];
-var id = 0;
+let id = 0;
 
 const questionHandler = {
 
