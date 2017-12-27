@@ -5,66 +5,72 @@ const flowController = {
 	
 	"getQuestions" : function(callback){
 		
-		const flag = questionHandler.fGetQuestions();
+		questionHandler.fGetQuestions(function(err,result){
 		
-		if(flag == 11){
+		if(err){
 			
 			return callback({"title":"Error getQuestions","message":"list is empty"});
 			
 		}
 		
-		return callback(null,flag);
+		return callback(null,result);
+		
+		});
 		
 	},
 	
 	"findQuestion" : function(data,callback){
 		
-		const flag = questionHandler.fFindQuestion(data);
+		questionHandler.fFindQuestion(data,function(err,result){
 		
-		if(flag == 11){ return callback({"title" : "Error","message" : "no such question"});}
+			if(err) return callback(err);
 		
-		else if(flag == 12){return callback({"title" : "Error","message" : "list is empty"});}
+			return callback(null,result);
 		
-		return callback(null,flag);
-		
+		});
 	},
 	
-	"postQuestions" : function(data){
+	"postQuestions" : function(data,callback){
 		
-		const flag = questionHandler.fPostQuestions(data);
+		questionHandler.fPostQuestions(data,function(err,result){
 		
+		if(err)return callback(err);
+		
+		return callback(null,result);
+		
+		});
 	},
 	
 	"addQuestion" : function(data,callback){
 		
-		const flag = questionHandler.fAddQuestion(data);
+		questionHandler.fAddQuestion(data,function(err,result){
 		
-		if (flag.question == data.question){
+		if (result[result.length - 1].question == data.question){
 			
-			return callback(null,flag);
+			return callback(null,result);
 			
 		}else{
 			
 			return callback({"title" : "Error addQuestion","message" : "adding question failed"});
 			
 		}
-	},
-
 		
+		});
 	},
 
 	"dropQuestion" : function(data,callback){
 		
 		
-		const flag = questionHandler.fDropQuestion(data);
+		questionHandler.fDropQuestion(data,function(err,result){
 		
-		if(flag == 11){
+		if(err){
 			
-			return callback({"title" : "Error dropQuestion","message" : "list is empty"});
+			return callback(err);
 		}
 		
-		return callback(null,flag);
+		return callback(null,result);
 		
+		});		
 	},
 
 };
