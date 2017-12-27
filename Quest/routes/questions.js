@@ -64,14 +64,13 @@ router.post('/postQuestions',jsonParser,function(req,res,next){
 
 router.post('/addQuestion',jsonParser,function(req,res,next){
 	
-	flowController.addQuestion(req.body);
-	if(result!=11){
+	flowController.addQuestion(req.body,function(err,result){
+		
+		if(err)res.status(500).json(err);
 		
 		res.status(200).json(result);
-	
-	}else{
-		res.status(500).json({"error" : "Failed to add questions"});
-	}
+		
+	});
 	
 });
 
