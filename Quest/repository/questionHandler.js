@@ -1,4 +1,4 @@
-var questions = [];
+let questions = [];
 let id = 0;
 
 /*const questionHandler = {
@@ -92,7 +92,7 @@ class qHandler {
 		
 	};
 	
-	fPostQuestions(data){
+	fPostQuestions(data,callback){
 		
 		questions = data;
 		
@@ -103,12 +103,12 @@ class qHandler {
 			
 		}
 		
-		return questions;
+		return callback(null,questions);
 	};
 	
-	fFindQuestion(data){
+	fFindQuestion(data,callback){
 		
-		if(questions.length == 0) return 12;
+		if(questions.length == 0) return callback({"title" : "Error findQuestion", "message" : "List is empty"});
 		
 		let i = 0;
 		
@@ -116,44 +116,45 @@ class qHandler {
 			
 			if(data.id == questions[i].id){
 				
-				return questions[i];
+				return callback(null,questions[i]);
 				
 			}
-			i++
+			i++;
 		}
 		
-		return 11;
+		return callback({"title" : "Error findQuestion", "message" : "There is no such question"});
 		
 	};
 	
-	fGetQuestions() {
+	fGetQuestions(callback) {
 		
 		if(questions.length!=0){
 			
-			return questions;
+	 		return callback(null,questions);;
 			
 		}else{
 			
-			return 11;
+			return callback({"title":"Error getQuestions","message":"list is empty"});
+
 			
 		}
 		
 	};
 	
-	fAddQuestion(data){
+	fAddQuestion(data,callback){
 		
 		data.id = id++;
 		questions.push(data);
 		
-		return questions[questions.length-1];
+		return callback(null,questions);
 	};
 	
-	fDropQuestion(data){
+	fDropQuestion(data,callback){
 		
 		
 		if(questions.length==0){
 			
-			return 11;
+			return callback({"title":"Error dropQuestion","message" : "List is empty"});
 			
 		}else{
 			
@@ -162,13 +163,13 @@ class qHandler {
 				if(data.question == questions[i].question){
 					
 					questions.splice(i,1);
-					return questions;
+					return callback(null,questions);
 				}
 				
 				i++;
 			}
 			
-			return 11;
+			return callback({"title" : "error", "message":"There is no such question"});
 		
 		}
 		
