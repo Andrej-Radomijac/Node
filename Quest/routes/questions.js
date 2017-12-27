@@ -27,8 +27,13 @@ router.post('/postAnswers',jsonParser,function(req,res,next){
 
 router.post('/findQuestion',jsonParser,function(req,res,next){
 	
-	const question = flowController.findQuestion(req.body);
-	res.status(200).json(question);
+	flowController.findQuestion(req.body,function(err,result){
+		
+		if(err) res.status(500).json(err);
+		
+		res.status(200).json(result);
+		
+	});
 	
 });
 
