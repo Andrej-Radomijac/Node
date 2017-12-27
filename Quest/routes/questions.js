@@ -76,16 +76,13 @@ router.post('/addQuestion',jsonParser,function(req,res,next){
 
 router.post('/dropQuestion',jsonParser,function(req,res,next){
 	
-	const result = flowController.dropQuestion(req.body);
+	flowController.dropQuestion(req.body,function(err,result){
 	
-	if(result == 11){
-		
-		res.status(500).json({"title" : "Error while dropping question","message" : "Question list is empty or something else occuried"});
-		
-	}else{
+		if(err)res.status(500).json(err);
 		
 		res.status(200).json(result);
-	}
+
+	});
 	
 });
 
