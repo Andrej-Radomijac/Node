@@ -45,16 +45,13 @@ router.get('/getPoints',function(req,res,next){
 
 router.get('/getQuestions',function(req,res,next){
 	
-	const questions = flowController.getQuestions();;
-
-	if(flag!=11){
+	flowController.getQuestions(function(err,result){
+	
+		if(err)res.status(500).json(err);
 		
-		res.status(200).json(questions);
-	
-	}else{
-		res.status(500).json({"error" : "Failed to get questions"});
-	}
-	
+		res.status(200).json(result);
+		
+	});
 });
 
 router.post('/postQuestions',jsonParser,function(req,res,next){
