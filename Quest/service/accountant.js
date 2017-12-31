@@ -1,8 +1,8 @@
 const flowController = require('../controller/flowController.js');
 
-const accountant = {
+class accountant {
 	
-	"fCountPointsHardCode" : function(questions,request){
+	fCountPointsHardCode(questions,request){
 		
 	let jediPoints = 0;
 	let sithPoints = 0;
@@ -24,9 +24,9 @@ const accountant = {
 	
 	return {"jediPoints" : jediPoints,"sithPoints" : sithPoints};
 		
-	},
+	};
 	
-	"fCountPoints" : function(data,callback){
+	fCountPoints(data,callback){
 		
 	flowController.getQuestions(function(err,result){
 	
@@ -53,7 +53,7 @@ const accountant = {
 	return callback(null,{"jediPoints" : jediPoints,"sithPoints" : sithPoints});
 	
 	});	
-	},
+	};
 };
 
-module.exports = accountant;
+module.exports = new accountant();
