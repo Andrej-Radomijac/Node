@@ -1,9 +1,13 @@
 const accountant = require('../service/accountant.js');
 const questionHandler = require('../repository/questionHandler.js');
 
-const flowController = {
+class flowController {
 	
-	"getQuestions" : function(callback){
+	flowController(){
+		
+	};
+	
+	getQuestions (callback){
 		
 		questionHandler.fGetQuestions(function(err,result){
 		
@@ -17,9 +21,9 @@ const flowController = {
 		
 		});
 		
-	},
+	};
 	
-	"findQuestion" : function(data,callback){
+	findQuestion(data,callback){
 		
 		questionHandler.fFindQuestion(data,function(err,result){
 		
@@ -28,9 +32,9 @@ const flowController = {
 			return callback(null,result);
 		
 		});
-	},
+	};
 	
-	"postQuestions" : function(data,callback){
+	postQuestions(data,callback){
 		
 		questionHandler.fPostQuestions(data,function(err,result){
 		
@@ -39,9 +43,9 @@ const flowController = {
 		return callback(null,result);
 		
 		});
-	},
+	};
 	
-	"addQuestion" : function(data,callback){
+	addQuestion(data,callback){
 		
 		questionHandler.fAddQuestion(data,function(err,result){
 		
@@ -56,9 +60,9 @@ const flowController = {
 		}
 		
 		});
-	},
+	};
 
-	"dropQuestion" : function(data,callback){
+	dropQuestion(data,callback){
 		
 		
 		questionHandler.fDropQuestion(data,function(err,result){
@@ -71,8 +75,8 @@ const flowController = {
 		return callback(null,result);
 		
 		});		
-	},
+	};
 
 };
 
-module.exports = flowController
+module.exports = new flowController();
