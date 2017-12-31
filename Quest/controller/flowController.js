@@ -1,4 +1,3 @@
-const accountant = require('../service/accountant.js');
 const questionHandler = require('../repository/questionHandler.js');
 
 class flowController {
