@@ -2,7 +2,6 @@ var http = require('http');
 var express = require('express');
 var app = express();
 var path = require('path');
-var bodyParser = require('body-parser');
 
 var questions = require('./routes/questions');
 var index = require('./routes/index.js');
@@ -12,9 +11,6 @@ app.set("views", path.join(__dirname, "/views"));
 
 app.use('/questions',questions);
 app.use('/',index);
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
