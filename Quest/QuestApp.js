@@ -6,6 +6,9 @@ var path = require('path');
 var questions = require('./routes/questions');
 var index = require('./routes/index.js');
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "/views"));
 
