@@ -1,12 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
-const bodyParser = require('body-parser');
-const jsonParser = bodyParser.json();
 const accountant = require('../service/accountant');
 const flowController = require('../controller/flowController.js');
 
-router.post('/resultsFromFile',jsonParser,function(req,res,next){
+router.post('/resultsFromFile',function(req,res,next){
 	
 	const rawData = fs.readFileSync('./Backend.js');
 	const parsedData = JSON.parse(rawData);
@@ -17,7 +15,7 @@ router.post('/resultsFromFile',jsonParser,function(req,res,next){
 
 });
 
-router.post('/postAnswers',jsonParser,function(req,res,next){
+router.post('/postAnswers',function(req,res,next){
 	
 	accountant.fCountPoints(req.body,function(err,result){
 	
@@ -33,7 +31,7 @@ router.post('/postAnswers',jsonParser,function(req,res,next){
 	});
 });
 
-router.post('/findQuestion',jsonParser,function(req,res,next){
+router.post('/findQuestion',function(req,res,next){
 	
 	flowController.findQuestion(req.body,function(err,result){
 		
@@ -66,7 +64,7 @@ router.get('/getQuestions',function(req,res,next){
 	});
 });
 
-router.post('/postQuestions',jsonParser,function(req,res,next){
+router.post('/postQuestions',function(req,res,next){
 	
 	flowController.postQuestions(req.body,function(err,result){
 	
@@ -82,7 +80,7 @@ router.post('/postQuestions',jsonParser,function(req,res,next){
 	});
 });
 
-router.post('/addQuestion',jsonParser,function(req,res,next){
+router.post('/addQuestion',function(req,res,next){
 	
 	flowController.addQuestion(req.body,function(err,result){
 		
@@ -98,7 +96,7 @@ router.post('/addQuestion',jsonParser,function(req,res,next){
 	
 });
 
-router.post('/dropQuestion',jsonParser,function(req,res,next){
+router.post('/dropQuestion',function(req,res,next){
 	
 	flowController.dropQuestion(req.body,function(err,result){
 	
