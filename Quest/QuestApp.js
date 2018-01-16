@@ -26,7 +26,8 @@ server.listen(5001);
 app.use(function(err,req,res,next){
 	
 	console.error(err.stack);
-	
+	res.status(500).send('Error!');
+
 });
 
 module.exports = app;
