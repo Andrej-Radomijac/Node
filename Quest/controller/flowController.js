@@ -3,7 +3,6 @@ const questionHandler = require('../repository/questionHandler.js');
 class flowController {
 	
 	flowController(){
-		
 	};
 	
 	getQuestions (callback){
@@ -11,9 +10,7 @@ class flowController {
 		questionHandler.fGetQuestions(function(err,result){
 		
 		if(err){
-			
-			return callback({"title":"Error getQuestions","message":"list is empty"});
-			
+			return callback({"title":"Error getQuestions","message":"list is empty"});	
 		}
 		
 		return callback(null,result);
