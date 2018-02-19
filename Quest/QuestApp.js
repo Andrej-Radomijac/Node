@@ -2,7 +2,7 @@ const http = require('http');
 const express = require('express');
 const app = express();
 const path = require('path');
-const bodyParser = require('body-parser').js
+const bodyParser = require('body-parser')
 
 const questions = require('./routes/questions');
 const index = require('./routes/index.js');
