@@ -1,10 +1,11 @@
-var http = require('http');
-var express = require('express');
-var app = express();
-var path = require('path');
+const http = require('http');
+const express = require('express');
+const app = express();
+const path = require('path');
+const bodyParser = require('body-parser').js
 
-var questions = require('./routes/questions');
-var index = require('./routes/index.js');
+const questions = require('./routes/questions');
+const index = require('./routes/index.js');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('port',5001);
 
-var server = http.createServer(app);
+const server = http.createServer(app);
 
 server.listen(5001);
 
