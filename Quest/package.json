@@ -4,7 +4,8 @@
   "description": "Small application for experimentation with node.js/express.js/pug",
   "main": "QuestApp.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node QuestApp.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/krijesnica96/QuestSW/issues"
   },
-  "homepage": "https://github.com/krijesnica96/QuestSW#readme"
+  "homepage": "https://github.com/krijesnica96/QuestSW#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "pug": "^2.0.0-rc.4"
+  }
 }
