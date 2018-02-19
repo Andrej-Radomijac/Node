@@ -4,8 +4,7 @@
   "description": "Small application for experimentation with node.js/express.js/pug",
   "main": "QuestApp.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "node QuestApp"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
