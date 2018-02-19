@@ -12,7 +12,6 @@ class flowController {
 		if(err){
 			return callback({"title":"Error getQuestions","message":"list is empty"});	
 		}
-		
 		return callback(null,result);
 		
 		});
