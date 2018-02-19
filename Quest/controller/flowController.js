@@ -3,7 +3,7 @@ const questionHandler = require('../repository/questionHandler.js');
 class flowController {
 	
 	flowController(){
-		
+		console.log("test");
 	};
 	
 	getQuestions (callback){
