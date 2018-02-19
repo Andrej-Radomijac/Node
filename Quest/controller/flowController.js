@@ -3,15 +3,24 @@ const questionHandler = require('../repository/questionHandler.js');
 class flowController {
 	
 	flowController(){
-		
+		console.log("test");
 	};
 	
 	getQuestions (callback){
 		
 		questionHandler.fGetQuestions(function(err,result){
 		
+
 			if(err)return callback({"title":"Error getQuestions","message":"list is empty"});
 					
+
+			if(err){
+				
+				return callback({"title":"Error getQuestions","message":"list is empty"});
+				
+			}
+			
+
 			return callback(null,result);
 		
 		});
@@ -44,10 +53,21 @@ class flowController {
 		
 		questionHandler.fAddQuestion(data,function(err,result){
 		
+
 			if (result[result.length - 1].question == data.question)return callback(null,result);
 							
 			return callback({"title" : "Error addQuestion","message" : "adding question failed"});
 					
+
+			if (result[result.length - 1].question == data.question){
+				
+				return callback(null,result);
+				
+			}
+				
+			return callback({"title" : "Error addQuestion","message" : "adding question failed"});
+		
+
 		});
 	};
 
@@ -56,11 +76,22 @@ class flowController {
 		
 		questionHandler.fDropQuestion(data,function(err,result){
 		
+
 			if(err)return callback(err);
 			
 			return callback(null,result);
 		
 		});		
+
+			if(err){
+				
+				return callback(err);
+			}
+			
+			return callback(null,result);
+			
+			});		
+
 	};
 
 };
